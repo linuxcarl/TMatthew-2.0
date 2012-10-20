@@ -1,0 +1,48 @@
+<%= form_for [:admin, @project] do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :employer_id %>
+    <%= f.collection_select :employer_id, Employer.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :permalink %>
+    <%= f.text_field :permalink %>
+  </div>
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :poster %>
+    <%= f.file_field :poster %>
+  </div>
+  <div class="field">
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+  <div class="field">
+    <%= f.label :short_description %>
+    <%= f.text_area :short_description %>
+  </div>
+  <div class="field">
+    <%= f.label :long_description %>
+    <%= f.text_area :long_description %>
+  </div>
+  <div class="field">
+    <%= f.label :property_of %>
+    <%= f.text_field :property_of %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

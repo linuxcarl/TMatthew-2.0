@@ -1,0 +1,22 @@
+<h1>Employers</h1>
+
+<%= link_to 'New Employer', new_admin_employer_path %>
+
+<table class="admin">
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Published</th>
+    <th></th>
+  </tr>
+  <% @employers.each do |employer| %> <tr>
+    <td><%= employer.position %></td>
+    <td><%= employer.title %></td>
+    <td><%= employer.published %></td>
+    <td>
+      <%= link_to 'view', admin_employer_path(employer) %> &bull;
+      <%= link_to 'edit', edit_admin_employer_path(employer) %> &bull;
+      <%= link_to 'delete', [:admin, employer], method: :delete, confirm: 'Are you sure?' %>
+    </td>
+  </tr> <% end %>
+</table>

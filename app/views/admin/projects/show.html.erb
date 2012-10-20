@@ -1,0 +1,62 @@
+<h1>Project: <%=@project.title%></h1>
+
+<%= link_to 'edit', [:edit, :admin, @project] %>
+
+<div class="attributes">
+  <div class="attribute">
+    <div class="key">Poster</div>
+    <div class="value"><%= link_to image_tag(@project.poster.url(:thumb)), @project.poster.url(:framed) %></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Title</div>
+    <div class="value"><%=@project.title%></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Employer</div>
+    <div class="value"><% if @project.employer %><%= link_to @project.employer.title, [:admin, @project.employer] %><% end %></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Link</div>
+    <div class="value"><%=@project.link%></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Position</div>
+    <div class="value"><%=@project.position%></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Published</div>
+    <div class="value"><%=@project.published%></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Permalink</div>
+    <div class="value"><%=@project.permalink%></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Short Description</div>
+    <div class="value"><%=@project.short_description%></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Long Description</div>
+    <div class="value"><%=@project.long_description%></div>
+  </div>
+</div>
+
+<br /><br />
+
+<h2>Screenshots</h2>
+<%= link_to 'New Screenshot', new_admin_project_screenshot_path(@project) %>
+<table class="admin">
+  <tr>
+    <th>#</th>
+    <th>Photo</th>
+    <th></th>
+  </tr>
+  <% @project.screenshots.each do |screenshot| %><tr>
+    <td><%= screenshot.position %></td>
+    <td><%= link_to image_tag(screenshot.photo.url(:thumb), width: 60), screenshot.photo.url(:large) %></td>
+    <td><%= link_to 'edit', edit_admin_project_screenshot_path(@project, screenshot) %></td>
+  </tr><% end %>
+</table>
+
+<br /><br />
+

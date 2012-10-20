@@ -1,0 +1,230 @@
+$color-dark-blue: #333A3D;
+$color-bright_blue: #3195AF;
+
+$font-alt: Optima, OPT, serif;
+$font-main: "Open Sans", "Lucida Grande", LucidaGrande, sans-serif;
+
+/* RESET */
+body {
+  padding:0; margin:0;
+  background-color:#333A3D;
+  background-image:url(/assets/layout/bg_gradient.png);
+  background-position:center top;
+  background-repeat:repeat-y;
+  color:#FFF;
+  font-family:$font-main;
+}
+a {
+  color:$color-bright_blue;
+  text-decoration:none;
+} a:hover {
+  color:darken($color-bright_blue, 9%);
+}
+h1, h2, h3 {
+  font-family: $font-alt; text-transform: uppercase;
+  margin:0px; padding:0px;
+}
+
+/* LAYOUT CLASSES */
+.widther {
+  width:960px;
+  margin:0px auto;
+}
+.contain {
+  overflow:hidden;
+}
+
+/* LAYERS */
+#layer_pattern {
+  position:absolute; z-index:100;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-image:url(/assets/layout/bg_pattern.png);
+  min-width: 960px;
+}
+#layer_content {
+  position:absolute; z-index:200;
+  overflow-x:hidden;
+  top:0; left:0;
+  width:100%; height:100%;
+  min-width: 960px;
+}
+
+/* SESSION */
+#session {
+  color:#DDD;
+  font-size:12px; text-shadow:0px 0px 2px black;
+  text-align:right;
+  margin:10px 0 4px;
+
+  a {
+    color:#DDD;
+    text-decoration: none;
+  }
+}
+
+/* BANNER */
+#banner_perspective {
+  perspective:600px;
+  -moz-perspective:600px;
+  -webkit-perspective:600px;
+
+  #banner_bg {
+    height:118px;
+    overflow:hidden;
+    background-image:url(/assets/layout/bg_banner.png);
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transform: rotateX(20deg);
+    -moz-transform: rotateX(20deg);
+    -webkit-transform: rotateX(20deg);
+
+    .widther {
+      margin-top:10px;
+    }
+  } #banner_bg:hover {
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+  }
+  #tag_n_title {
+    float:left;
+    margin-top:24px;
+    #title {
+      color:$color-dark-blue;
+      font-family:$font-alt; font-size:30px; text-transform:uppercase;
+    }
+    #tag {
+      color:#BBB;
+      font-family: monospace; font-size:12px;
+    }
+  }
+
+  #main_menu {
+    width:600px;
+    float:right;
+
+    a {
+      float:right;
+      margin-top:35px;
+      font-size:22px; text-transform: uppercase;
+      margin-left:40px;
+
+      &.selected {
+        border-bottom:2px solid $color-bright_blue;
+      }
+    }
+  }
+}
+
+/* ADMIN MENU */
+#admin_menu {
+  margin-bottom:18px;
+}
+
+/* BODY */
+#body {
+  margin-top:-9px; padding-top:9px;
+  background-color:#FFF; color:$color-dark-blue;
+  font-size:15px;
+  .widther {
+    padding:10px 0px;
+    min-height:600px;
+  }
+}
+
+/* FOOTER */
+#footer {
+  background-image:url(/assets/layout/trans_black_50.png);
+  color:#999;
+  font-size:12px; font-family:$font-main;
+  padding:6px 0;
+  margin-top:50px;
+  #copyright {
+    float:left;
+  }
+  #blah {
+    float:right;
+  }
+}
+
+/* FORM ELEMENTS */
+input[type='text'], input[type='password'], textarea {
+  width:300px;
+  background-image:url(/assets/layout/input_bg.jpg);
+  background-repeat:repeat-x;
+  border:1px solid #CCC;
+  border-radius:5px;
+  padding:6px;
+  font-family:$font-main;
+  font-size:12px;
+} textarea {
+  height:100px;
+}
+.field {
+  display:table-row;
+  label {
+    display:table-cell;
+    text-align:right;
+    padding-right:8px;
+    font-weight:light;
+    font-size:16px; color:#777;
+    padding-bottom:10px;
+  }
+  input[type='text'], input[type='password'], textarea, select {
+    display:table-cell;
+  }
+} .actions {
+  margin-top:20px;
+}
+
+/* TABLES */
+$table-border-color: #CCC;
+table.admin {
+  border:1px solid $table-border-color;
+  border-bottom:none; border-right:none;
+  width:100%;
+  border-radius:5px !important;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  tr:nth-child(even) {
+    background-color:#F3F3F3;
+  } tr:hover {
+    background-color:#E7E7E7;
+  }
+
+  td, th {
+    padding:5px 8px;
+    border:1px solid $table-border-color;
+    border-top:none; border-left:none;
+    text-align:left;
+    color:#666;
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.75)
+  } th {
+    padding:8px;
+    background-image:url(/assets/layout/table_head.png);
+  }
+} table.admin.min-width {
+  width:inherit;
+}
+
+/* COMMON CLASSES */
+.attributes {
+  .attribute {
+    display:table-row;
+    .key {
+      display:table-cell;
+      font-weight:bold;
+      text-align:right;
+      padding-right:8px;
+      padding-bottom:8px;
+    }
+    .value {
+      display:table-cell;
+      padding-bottom:8px;
+    }
+  }
+}
+

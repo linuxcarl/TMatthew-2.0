@@ -1,0 +1,18 @@
+<h1>Employer: <%=@employer.title%></h1>
+
+<%= link_to 'edit', [:edit, :admin, @employer] %>
+
+<div class="attributes">
+  <div class="attribute">
+    <div class="key">Position</div>
+    <div class="value"><%= @employer.position %></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Title</div>
+    <div class="value"><%= @employer.title %></div>
+  </div>
+  <div class="attribute">
+    <div class="key">Published</div>
+    <div class="value"><%= @employer.published %></div>
+  </div>
+</div>

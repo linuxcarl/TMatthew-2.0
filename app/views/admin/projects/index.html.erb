@@ -1,0 +1,26 @@
+<h1>Projects</h1>
+
+<%= link_to 'New Project', new_admin_project_path %>
+
+<table class="admin">
+  <tr>
+    <th>Employer</th>
+    <th>#</th>
+    <th>Title</th>
+    <th>Published</th>
+    <th>Property Of</th>
+    <th></th>
+  </tr>
+  <% @projects.each do |project| %> <tr>
+    <td><%= project.employer.try(:title) %></td>
+    <td><%= project.position %></td>
+    <td><%= project.title %></td>
+    <td><%= project.published %></td>
+    <td><%= project.property_of %></td>
+    <td>
+      <%= link_to 'view', admin_project_path(project) %> &bull;
+      <%= link_to 'edit', edit_admin_project_path(project) %> &bull;
+      <%= link_to 'delete', [:admin, project], method: :delete, confirm: 'Are you sure?' %>
+    </td>
+  </tr> <% end %>
+</table>

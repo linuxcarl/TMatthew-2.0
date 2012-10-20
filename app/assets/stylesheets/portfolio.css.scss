@@ -1,0 +1,98 @@
+$color-dark-blue: #333A3D;
+$color-bright_blue: #3195AF;
+
+.employer {
+  background-image:url(/assets/portfolio/shadow.png); background-position: bottom center; background-repeat: no-repeat;
+  position:relative;
+  height:440px;
+  margin-bottom:50px;
+
+  .slider_button {
+    width:19px; height:35px;
+    top:50%; margin-top:-18px;
+    display:block;
+    position:absolute;
+    &[data-direction='next'] {
+      right:0px;
+      background-image: url(/assets/portfolio/right_arrow.png);
+    }
+    &[data-direction='prev'] {
+      left:0px;
+      background-image: url(/assets/portfolio/left_arrow.png);
+    }
+  }
+}
+
+.project_window {
+  width:860px; height:360px;
+  margin:0px auto;
+  overflow: hidden;
+  position:relative;
+
+  .projects {
+    overflow: hidden;
+    position:absolute;
+    top:0px; left:0px;
+
+    .project {
+      width:860px; height:360px;
+      float:left;
+
+      .text {
+        padding-top:20px;
+        padding-left:40px;
+        width:390px;
+        float:left;
+        text-align:right;
+
+        .screenshots {
+          overflow: hidden;
+          height:60px;
+
+          a {
+            display:block; float:right;
+            border:1px solid #CCC;
+            padding:4px;
+            margin-right:5px;
+          }
+          img {
+            display:block;
+            width:50px; height:50px;
+          }
+        }
+        .property_of {
+          font-size:10px;
+          font-weight: bold; color:#999;
+        }
+      }
+      .poster {
+        width:400px; height:360px;
+        float:right;
+        background-repeat: no-repeat; background-position: center bottom;
+      }
+    }
+  }
+}
+
+.pages {
+
+  .pages_con {
+    float:left;
+    position:relative; left:50%;
+  }
+  .page {
+    cursor:pointer;
+    display:block; float:left;
+    width:12px; height:12px;
+    border:2px solid $color-dark-blue;
+    border-radius:100px;
+    margin:0px 2px;
+    position:relative; left:-50%;
+    box-shadow:inset 0px 0px 5px $color-dark-blue;
+
+    &[data-selected='true'] {
+      background-color:$color-dark-blue;
+    }
+  }
+}
+

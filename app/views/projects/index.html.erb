@@ -1,0 +1,31 @@
+
+<% @employers.each do |employer| %> <div class="employer" data-project-count="<%=employer.published_projects.length%>" data-project-index="0">
+  <a href="#" class="slider_button" data-direction="prev"></a>
+  <a href="#" class="slider_button" data-direction="next"></a>
+
+  <!--projects-->
+  <div class="project_window"><div class="projects" style="width:<%=employer.published_projects.length*860%>px;">
+    <% employer.published_projects.each do |project| %> <div class="project">
+      <!--text column-->
+      <div class="text">
+        <h3 class="title"><%=project.title%></h3>
+        <p class="description"><%=project.long_description%></p>
+        <div class="screenshots">
+          <% project.screenshots.each do |screenshot| %>
+            <%= link_to image_tag(screenshot.photo.url(:thumb)), screenshot.photo.url(:large), rel: "project_#{project.id}" %>
+          <% end %>
+        </div>
+        <p class="property_of"><%=project.property_of.present? ? "property of #{project.property_of}" : ''%></p>
+      </div>
+      <!--poster column-->
+      <div class="poster" style="background-image:url(<%=project.poster.url(:framed)%>);"></div>
+    </div> <% end %>
+  </div></div>
+
+  <div class="pages"><div class="pages_con">
+    <% employer.published_projects.each_with_index do |project, index| %>
+      <div class="page" data-selected="<%=index==0%>" data-page="<%=index%>"></div>
+    <% end %>
+  </div></div>
+
+</div> <% end %>

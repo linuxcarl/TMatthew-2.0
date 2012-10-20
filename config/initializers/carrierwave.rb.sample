@@ -1,0 +1,15 @@
+CarrierWave.configure do |config|
+
+  config.storage = :fog
+  #config.enable_processing = false if Rails.env.test? or Rails.env.cucumber?
+
+  config.fog_credentials = {
+    provider:               'AWS',
+    aws_access_key_id:      'XXX',
+    aws_secret_access_key:  'YYY',
+    region:                 'us-east-1'
+  }
+  config.fog_host           = "http://tmatthew2-#{Rails.env}.s3.amazonaws.com"
+  config.fog_directory      = "tmatthew2-#{Rails.env}"
+
+end
