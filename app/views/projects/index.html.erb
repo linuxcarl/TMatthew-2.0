@@ -8,14 +8,16 @@
     <% employer.published_projects.each do |project| %> <div class="project">
       <!--text column-->
       <div class="text">
-        <h3 class="title"><%=project.title%></h3>
+        <h3 class="title">
+          <%= project.link.present? ? link_to(project.title, project.link, target: '_blank') : project.title %>
+        </h3>
         <p class="description"><%=project.long_description%></p>
-        <div class="screenshots">
+        <p class="property_of"><%=project.property_of.present? ? "property of #{project.property_of}" : ''%></p>
+        <div class="screenshots"><div class="screenshots_scroller" style="width:<%=65*project.screenshots.length.to_i%>px;">
           <% project.screenshots.each do |screenshot| %>
             <%= link_to image_tag(screenshot.photo.url(:thumb)), screenshot.photo.url(:large), rel: "project_#{project.id}" %>
           <% end %>
-        </div>
-        <p class="property_of"><%=project.property_of.present? ? "property of #{project.property_of}" : ''%></p>
+        </div></div>
       </div>
       <!--poster column-->
       <div class="poster" style="background-image:url(<%=project.poster.url(:framed)%>);"></div>
