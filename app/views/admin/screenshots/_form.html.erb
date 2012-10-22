@@ -1,23 +1,23 @@
 <%= form_for [:admin, @project, @screenshot] do |f| %>
 
-	<div class="field">
-		<%= f.label :project_id %>
-		<%= f.collection_select :project_id, Project.all, :id, :title %>
-	</div>
-	<div class="field">
-		<%= f.label :photo %>
-		<%= f.file_field :photo %>
-	</div>
-	<div class="field">
-		<%= f.label :position %>
-		<%= f.text_field :position %>
-	</div>
+  <div class="field">
+    <%= f.label :project_id %>
+    <%= f.collection_select :project_id, Project.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
 
-	<div class="actions">
-		<%= f.submit %>
-		<% unless @screenshot.new_record? %>
-			<%= link_to 'Delete Screenshot', [:admin, @project, @screenshot], method: :delete, confirm: 'Are you sure?' %>
-		<% end %>
-	</div>
+  <div class="actions">
+    <%= f.submit %>
+    <% unless @screenshot.new_record? %>
+      <%= link_to 'Delete Screenshot', [:admin, @project, @screenshot], method: :delete, confirm: 'Are you sure?' %>
+    <% end %>
+  </div>
 
 <% end %>

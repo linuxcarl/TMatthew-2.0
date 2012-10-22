@@ -1,18 +1,36 @@
-<style>
-  #con {
-    width:400px; height:344px;
-    -webkit-perspective:600px;
-  }
-  #monitor {
-    width:400px; height:344px;
-    background-image: url(/assets/layout/test.png);
-    -webkit-transition: all 1s ease-in-out;
-    -webkit-transform: rotateY(40deg);
-  } #monitor:hover {
-    -webkit-transform: rotateY(-40deg);
-  }
-</style>
+<div id="home">
 
-<div id="con">
-  <div id="monitor"></div>
+  <div class="section">
+    <h1>Software Engineer</h1>
+    <div id="page_links">
+      <a href="/about" style="background-image:url(/assets/home/icon_about.png);">
+        <br /><span>About</span>
+      </a>
+      <a href="/resume" style="background-image:url(/assets/home/icon_resume.png);">
+        <br /><span>Résumé</span>
+      </a>
+      <a href="/portfolio" style="background-image:url(/assets/home/icon_portfolio.png);">
+        <br /><span>Portfolio</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>Open Source</h1>
+    <img id="jwc_demo" src="/assets/jwindowcrop/dock.jpg" alt="jWindowCrop" />
+  </div>
+
+  <div class="section">
+    <h1>Recent Tweets</h1>
+  </div>
+
 </div>
+
+<script>
+  $(function() {
+    $('#jwc_demo').jWindowCrop({
+      targetWidth: 500,
+      targetHeight: 150
+    });
+  });
+</script>

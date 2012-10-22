@@ -1,0 +1,19 @@
+<%= form_for [:admin, @resume] do |f| %>
+
+  <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :file %>
+  </div>
+  <div class="field">
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+    <% unless @resume.new_record? %>
+      <%= link_to 'Delete Resume', [:admin, @resume], method: :delete, confirm: 'Are you sure?' %>
+    <% end %>
+  </div>
+
+<% end %>

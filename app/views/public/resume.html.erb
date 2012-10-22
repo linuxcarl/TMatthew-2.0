@@ -1,1 +1,12 @@
-<iframe id="resume_iframe" src="http://docs.google.com/viewer?embedded=true&url=<%=BASE_URL%>/Resume_Tyler_Brown.pdf">Iframe</iframe>
+<% if @resume %>
+
+  <div id="resume_links">
+    <%= link_to 'Download PDF', download_resume_path, class: 'button' %>
+    <%= link_to 'Direct Link', @resume.file.url, class: 'button' %>
+  </div>
+
+  <iframe id="resume_iframe" src="http://docs.google.com/viewer?embedded=true&url=<%=@resume.file.url%>" style="height:<%=@resume.height.to_i%>px;">
+    Iframe
+  </iframe>
+
+<% end %>

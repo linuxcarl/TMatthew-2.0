@@ -1,0 +1,18 @@
+<h1>Resumes</h1>
+
+<%= link_to 'New Resume', new_admin_resume_path %>
+
+<table class="admin">
+  <tr>
+    <th>Date</th>
+    <th>File</th>
+    <th>Height</th>
+    <th></th>
+  </tr>
+  <% @resumes.each do |resume| %><tr>
+    <td><%= resume.created_at.strftime('%b %d, %Y') %></td>
+    <td><%= link_to resume.file.url, resume.file.url %></td>
+    <td><%= resume.height %></td>
+    <td><%= link_to 'edit', edit_admin_resume_path(resume) %></td>
+  </tr> <% end %>
+</table>

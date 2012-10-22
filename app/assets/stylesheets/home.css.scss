@@ -1,0 +1,38 @@
+$color-dark-blue: #333A3D;
+$color-bright_blue: #3195AF;
+
+#home {
+overflow: hidden;
+  div {
+    overflow: hidden;
+  }
+
+  .section {
+    margin-bottom:50px;
+  }
+
+  #page_links {
+    overflow: hidden;
+    margin:0px auto;
+
+    a {
+      display:block;
+      float:left;
+      width: 180px; height:90px;
+      text-transform: uppercase;
+      background-repeat: no-repeat;
+      padding:5px 0px 0px 90px;
+      span {
+        font-size:26px;
+      }
+    }
+  }
+
+  .jwc_frame {
+    border:2px solid $color-dark-blue;
+  }
+  #jwd_demo {
+    display:block;
+  }
+
+}

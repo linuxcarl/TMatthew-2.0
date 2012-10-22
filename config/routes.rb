@@ -2,6 +2,7 @@ TMatthew2::Application.routes.draw do
 
   namespace :admin do
     resources :employers
+    resources :resumes
     resources :projects do
       resources :screenshots
     end
@@ -9,6 +10,7 @@ TMatthew2::Application.routes.draw do
 
   match 'portfolio' => 'projects#index'
   match 'resume' => 'public#resume', as: 'resume'
+  match 'download_resume' => 'public#download_resume', as: 'download_resume'
   match 'about' => 'public#about'
 
   resources :sessions
