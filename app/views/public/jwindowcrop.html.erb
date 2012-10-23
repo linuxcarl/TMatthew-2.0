@@ -1,0 +1,41 @@
+<h1>jWindowCrop</h1>
+
+<div id="jwc_demos">
+  <div class="jwc_con_left">
+    <img class="jwc_demo1" src="/assets/jwindowcrop/lake.jpg" alt="jWindowCrop Demo" data-target="#jwc_r1" />
+  </div>
+  <div class="jwc_con_right">
+    <img class="jwc_demo2" src="/assets/jwindowcrop/beach.jpg" alt="jWindowCrop Demo" data-target="#jwc_r2" />
+  </div>
+  <div class="jwc_con_right">
+    <img class="jwc_demo2" src="/assets/jwindowcrop/dock.jpg" alt="jWindowCrop Demo" data-target="#jwc_r3" />
+  </div>
+</div>
+<div id="jwc_demos_result">
+  <span id="jwc_r1"></span>
+  <span id="jwc_r2"></span>
+  <span id="jwc_r3"></span>
+</div>
+
+<script>
+  $(function() {
+    $('.jwc_demo1').jWindowCrop({
+      targetWidth: 300, targetHeight: 240,
+      onChange: updateCoords
+    });
+    $('.jwc_demo2').jWindowCrop({
+      targetWidth: 660, targetHeight: 120,
+      onChange: updateCoords
+    });
+  });
+
+  function updateCoords(data) {
+    var result_target = $(this).data('target');
+    var results = "x:"+data.cropX + " y:"+data.cropY + " w:"+data.cropW + " h:"+data.cropH;
+    $(result_target).text(results);
+  }
+</script>
+
+<div id="github_html">
+  <%= @readme_html %>
+</div>

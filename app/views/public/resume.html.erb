@@ -5,8 +5,14 @@
     <%= link_to 'Direct Link', @resume.file.url, class: 'button' %>
   </div>
 
-  <iframe id="resume_iframe" src="http://docs.google.com/viewer?embedded=true&url=<%=@resume.file.url%>" style="height:<%=@resume.height.to_i%>px;">
-    Iframe
-  </iframe>
+  <% if @resume.display_photos %>
+
+    photos
+
+  <% else %>
+
+    <iframe id="resume_iframe" src="http://docs.google.com/viewer?embedded=true&url=<%=@resume.file.url%>" style="height:<%=@resume.height.to_i%>px;">Iframe</iframe>
+
+  <% end %>
 
 <% end %>

@@ -8,6 +8,18 @@
     <%= f.label :height %>
     <%= f.text_field :height %>
   </div>
+  <div class="field">
+    <%= f.label :page_1_photo %>
+    <%= f.file_field :page_1_photo %>
+  </div>
+  <div class="field">
+    <%= f.label :page_2_photo %>
+    <%= f.file_field :page_2_photo %>
+  </div>
+  <div class="field">
+    <%= f.label :display_photos %>
+    <%= f.check_box :display_photos %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

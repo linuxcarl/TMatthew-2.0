@@ -21,6 +21,12 @@ $color-bright_blue: #3195AF;
       background-image: url(/assets/portfolio/left_arrow.png);
     }
   }
+
+  .employer_title {
+    text-align: center;
+    font-size: 16px;
+
+  }
 }
 
 .project_window {
@@ -75,6 +81,7 @@ $color-bright_blue: #3195AF;
 }
 
 .pages {
+  overflow: hidden;
 
   .pages_con {
     float:left;

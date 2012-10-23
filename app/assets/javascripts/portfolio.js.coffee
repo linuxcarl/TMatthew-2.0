@@ -12,11 +12,13 @@ jQuery ->
       index--
       index = count-1 if index < 0
     goToPage $employer, index
+    false
 
   $('.page').click ->
     $employer = $(@).closest '.employer'
     page = $(@).data 'page'
     goToPage $employer, page
+    false
 
   $('.screenshots a').colorbox
     current: false, previous: false, next: false

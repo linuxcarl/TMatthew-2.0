@@ -14,8 +14,8 @@ gem 'fog'         # s3 storage for carrierwave uploads
 gem 'carrierwave' # file uploads
 gem 'rmagick'     # image processing
 
-gem 'pdfkit'
-gem 'wkhtmltopdf-binary'
+gem 'rinku', :require => 'rails_rinku'
+gem 'bluecloth'
 
 # Gems used only for assets and not required
 # in production environments by default.

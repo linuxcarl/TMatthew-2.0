@@ -70,6 +70,7 @@ h1, h2, h3 {
   perspective:600px;
   -moz-perspective:600px;
   -webkit-perspective:600px;
+  overflow: hidden;
 
   #banner_bg {
     height:118px;
@@ -78,9 +79,12 @@ h1, h2, h3 {
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
-    transform: rotateX(20deg);
-    -moz-transform: rotateX(20deg);
-    -webkit-transform: rotateX(20deg);
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    transform-origin:left 80%;
+    -moz-transform-origin:left 80%;
+    -webkit-transform-origin:left 80%;
 
     .widther {
       margin-top:10px;
@@ -88,7 +92,7 @@ h1, h2, h3 {
   } #banner_bg:hover {
     transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
-    -webkit-transform: rotateX(0deg);
+    -webkit-transform: rotateX(20deg);
   }
   #tag_n_title {
     float:left;

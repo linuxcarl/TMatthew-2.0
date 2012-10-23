@@ -12,6 +12,7 @@ TMatthew2::Application.routes.draw do
   match 'resume' => 'public#resume', as: 'resume'
   match 'download_resume' => 'public#download_resume', as: 'download_resume'
   match 'about' => 'public#about'
+  match 'jwindowcrop' => 'public#jwindowcrop'
 
   resources :sessions
   match 'login' => 'sessions#new', :as => 'login'

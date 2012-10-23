@@ -24,10 +24,13 @@
     </div> <% end %>
   </div></div>
 
+  <!--pages-->
   <div class="pages"><div class="pages_con">
     <% employer.published_projects.each_with_index do |project, index| %>
       <div class="page" data-selected="<%=index==0%>" data-page="<%=index%>"></div>
     <% end %>
   </div></div>
+
+  <h2 class="employer_title"><%=employer.title%> Projects</h2>
 
 </div> <% end %>

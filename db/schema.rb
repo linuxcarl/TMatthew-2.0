@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022015112) do
+ActiveRecord::Schema.define(:version => 20121023013618) do
 
   create_table "employers", :force => true do |t|
     t.string   "title"
@@ -38,9 +38,12 @@ ActiveRecord::Schema.define(:version => 20121022015112) do
 
   create_table "resumes", :force => true do |t|
     t.string   "file"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-    t.integer  "height",     :default => 2445
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "height",         :default => 2445
+    t.string   "page_1_photo"
+    t.string   "page_2_photo"
+    t.boolean  "display_photos", :default => false
   end
 
   create_table "screenshots", :force => true do |t|

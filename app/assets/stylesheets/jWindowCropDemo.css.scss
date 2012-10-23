@@ -1,0 +1,37 @@
+#jwc_demos {
+  overflow: hidden;
+
+  .jwc_con_left {
+    width:300px;
+    float:left;
+  }
+  .jwc_con_right {
+    margin-left: 300px;
+  }
+}
+#jwc_demos_result {
+  overflow: hidden;
+  font-size:15px;
+  padding:2px;
+  font-family: menlo, monospace;
+  margin-bottom: 20px;
+
+  span {
+    display: block;
+    width:33%;
+    float:left;
+  }
+}
+
+#github_html {
+  table {
+    border:1px solid #CCC;
+    border-width:0px 0px 1px 1px;
+    border-collapse:collapse;
+    td, th {
+      border:1px solid #CCC;
+      border-width:1px 1px 0px 0px;
+      padding:4px;
+    }
+  }
+}

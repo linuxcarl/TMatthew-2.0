@@ -1,27 +1,35 @@
 <div id="home">
 
   <div class="section">
+    <h1>Recent Tweets</h1>
+    <ul id="tweets"><%@tweets.each do |tweet|%>
+      <li><%= auto_link tweet['text'].html_safe %></li>
+    <%end%></ul>
+  </div>
+
+  <div class="section" id="link_section"><div class="padder">
     <h1>Software Engineer</h1>
     <div id="page_links">
-      <a href="/about" style="background-image:url(/assets/home/icon_about.png);">
+      <a href="/about">
+        <img src="/assets/home/icon_about.png" alt="About" />
         <br /><span>About</span>
       </a>
-      <a href="/resume" style="background-image:url(/assets/home/icon_resume.png);">
+      <a href="/resume">
+        <img src="/assets/home/icon_resume.png" alt="Resume" />
         <br /><span>Résumé</span>
       </a>
-      <a href="/portfolio" style="background-image:url(/assets/home/icon_portfolio.png);">
+      <a href="/portfolio">
+        <img src="/assets/home/icon_portfolio.png" alt="Portfolio" />
         <br /><span>Portfolio</span>
       </a>
     </div>
-  </div>
+  </div></div>
 
   <div class="section">
     <h1>Open Source</h1>
+    <h3>jWindowCrop</h3>
     <img id="jwc_demo" src="/assets/jwindowcrop/dock.jpg" alt="jWindowCrop" />
-  </div>
-
-  <div class="section">
-    <h1>Recent Tweets</h1>
+    <a class="button" href="/jwindowcrop">Demo &amp; Docs</a>
   </div>
 
 </div>
@@ -29,8 +37,8 @@
 <script>
   $(function() {
     $('#jwc_demo').jWindowCrop({
-      targetWidth: 500,
-      targetHeight: 150
+      targetWidth: 310,
+      targetHeight: 120
     });
   });
 </script>
